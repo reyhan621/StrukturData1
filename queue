@@ -1,0 +1,50 @@
+def createNewStack():
+    lis = []
+    return lis
+
+def enqueue(Q, elemen):
+    Q.append(elemen)
+
+def isEmpty(Q):
+    #jika tumpukan kosaong maka True
+    #jika ada isiny maka False
+    if len(Q) == 0:
+        return True
+    else:
+        return False
+    
+def dequeue(Q):
+    if isEmpty(Q):
+        return None
+    else:
+        x = Q[0]
+        for i in range (len(Q)-1):
+            Q[i]= Q[i+1]
+        Q.pop()
+        return x
+
+def printStack (Q):
+    print(Q)
+            
+def peekBelakang(Q):
+    return Q[-1]
+
+
+def peekDepan(Q):
+    return Q[0]
+    
+def clear(Q):
+    Q.clear()
+
+queue = createNewStack()
+for i in range(5):
+    data = input()
+    enqueue(queue, data)
+
+printStack(queue)
+dequeue(queue)
+dequeue(queue)
+enqueue(queue,7)
+printStack(queue)
+clear(queue)
+printStack(queue)
