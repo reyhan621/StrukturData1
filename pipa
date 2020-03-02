@@ -1,0 +1,14 @@
+n = int(input())
+bola = list(map(int, input().split()))
+list1 = []
+list2 = []
+for i in range(len(bola)):
+    if i%2 != 0:
+        list1.append (bola[i])
+    else:
+        list2.append (bola[i])
+
+z= list2[::-1]
+c = list1 + z
+print(*c, sep =' ',end=" ")
+print()
